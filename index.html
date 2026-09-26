@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#070604">
+  <title>Setiap Piksel Memiliki Cerita — Visual Archive</title>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- TAILWIND CONFIG -->
+  <script src="https://tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            body: ['Inter', 'sans-serif'],
+            hand: ['Caveat', 'cursive']
+          },
+          colors: { gold: '#d4af37' }
+        }
+      }
+    }
+  </script>
+
+  <!-- CSS STYLE LINK -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#070604] text-white">
+
+  <!-- ATMOSPHERE EFFECTS -->
+  <div class="grain"></div>
+  <div id="flash"></div>
+
+  <!-- FIXED HEADER NAV -->
+  <header class="fixed top-0 left-0 w-full z-[8000] px-5 md:px-10 py-5 flex items-center justify-between mix-blend-difference pointer-events-none">
+    <span class="font-cinzel text-[11px] tracking-[0.4em]">VISUAL·ARCHIVE</span>
+    <span class="hidden sm:block font-cinzel text-[10px] tracking-[0.35em] text-white/60">MMXIX — MMXXV</span>
+  </header>
+
+  <main>
+    <!-- ================= 1. HERO SECTION ================= -->
+    <section id="hero" class="relative w-full overflow-hidden bg-black">
+      
+      <!-- Layer Rak Buku -->
+      <div id="shelfLayer" class="absolute inset-0">
+        <img id="shelfImg" src="https://ibb.co" alt="Bookshelf Background">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black"></div>
+        <div class="absolute inset-0 vignette"></div>
+      </div>
+
+      <div id="shelfDim" class="absolute inset-0 bg-black pointer-events-none" style="opacity:0"></div>
+
+      <!-- Teks Narasi Pembuka -->
+      <div id="introText" class="absolute inset-x-0 top-[22%] z-20 px-7 text-center will-change-transform">
+        <p class="mb-5 text-[9px] tracking-[0.55em] text-gold/75 md:text-[11px]">ARSIP VISUAL · 2019 — 2025</p>
+        <h1 class="font-cinzel text-[26px] font-bold leading-[1.18] sm:text-4xl md:text-6xl lg:text-7xl">
+          SETIAP PIKSEL<br>MEMILIKI CERITA.
+        </h1>
+        <p class="mx-auto mt-6 max-w-[22rem] text-[12px] leading-relaxed tracking-[0.12em] text-white/45 md:text-sm">
+          DI SINI, MEMORI KEMBALI HIDUP.
+        </p>
+      </div>
+
+      <!-- Panduan Scroll -->
+      <div id="scrollHint" class="absolute inset-x-0 bottom-9 z-20 flex flex-col items-center gap-3">
+        <span class="text-[9px] tracking-[0.42em] text-white/35">GULIR PERLAHAN</span>
+        <span class="hint-line"></span>
+      </div>
+
+      <!-- Panggung Buku 3D -->
+      <div id="bookStage" class="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
+        <div id="bookGlow" class="pointer-events-none absolute left-1/2 top-1/2 h-[160%] w-[160%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0"></div>
+        <div class="book-scene">
+          <div class="book-tilt">
+            <div id="book" class="book">
+              
+              <!-- Halaman Dalam Buku -->
+              <div class="book-pages">
+                <i class="head"></i><i class="w85"></i><i class="w65"></i><i class="w85"></i>
+                <i class="w40"></i><i class="w65"></i><i class="w85"></i><i class="w40"></i>
+              </div>
+
+              <div class="book-spine"></div>
+
+              <!-- Sampul Buku 3D -->
+              <div id="bookCover" class="book-cover">
+                <div class="cover-face cover-front">
+                  <img src="https://ibb.co" alt="Cover Buku Album">
+                  <div class="cover-sheen"></div>
+                </div>
+                <div class="cover-face cover-back"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layer Foto Polaroid yang Terbang (Diinjeksi via JS) -->
+      <div id="flyLayer"></div>
+      <div id="veil"></div>
+    </section>
+
+    <!-- ================= 2. GALLERY GRID SECTION ================= -->
+    <section id="gallery" class="relative overflow-hidden bg-[#070604] py-24 md:py-36">
+      <div class="pointer-events-none absolute inset-0 opacity-[0.05]" style="background-image: radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0); background-size: 30px 30px;"></div>
+      <div class="pointer-events-none absolute -top-40 left-1/2 h-[80vw] w-[80vw] max-h-[880px] max-w-[880px] -translate-x-1/2 rounded-full" style="background: radial-gradient(circle, rgba(212,175,55,.11) 0%, transparent 66%);"></div>
+
+      <div class="relative mx-auto max-w-6xl px-5 md:px-8">
+        <div class="reveal-up text-center">
+          <p class="text-[9px] tracking-[0.5em] text-gold/70 md:text-[11px]">BAB KEDUA</p>
+          <h2 class="mt-5 font-cinzel text-[28px] leading-tight md:text-5xl">GALERI KENANGAN</h2>
+          <div class="mx-auto mt-7 h-px w-20 bg-gradient-to-r from-transparent via-gold/70 to-transparent"></div>
+          <p class="mx-auto mt-6 max-w-md text-[13px] leading-relaxed text-white/40">
+            Beberapa bingkai yang berhasil diselamatkan dari lupa. Ketuk salah satu foto untuk membuka ceritanya.
+          </p>
+        </div>
+
+        <!-- Wadah Grid Otomatis (Diisi via JS) -->
+        <div id="grid" class="mt-14 grid grid-cols-2 gap-3 md:mt-20 md:grid-cols-4 md:gap-5"></div>
+      </div>
+    </section>
+
+    <!-- ================= 3. FOOTER SECTION ================= -->
+    <section id="kontak" class="relative overflow-hidden border-t border-white/5 px-6 py-28 text-center md:py-40">
+      <div class="pointer-events-none absolute inset-0" style="background: radial-gradient(circle at 50% 115%, rgba(212,175,55,.17) 0%, transparent 62%);"></div>
+      <div class="relative mx-auto max-w-2xl">
+        <p class="reveal-up text-[9px] tracking-[0.5em] text-gold/70 md:text-[10px]">BAB TERAKHIR — UNTUK SEKARANG</p>
+        <h2 class="reveal-up mt-6 font-cinzel text-[28px] leading-tight md:text-5xl">
+          MARI BUAT<br><span class="text-gold">CERITA BERIKUTNYA.</span>
+        </h2>
+        <p class="reveal-up mx-auto mt-7 max-w-sm text-[13px] leading-relaxed text-white/45">
+          Terbuka untuk kolaborasi fotografi, desain, dan penceritaan visual. Album ini selalu punya halaman kosong.
+        </p>
+
+        <a href="mailto:hello@example.com" class="reveal-up mt-11 inline-block rounded-full border border-gold/40 px-9 py-4 text-[10px] tracking-[0.35em] text-gold transition-all duration-500 hover:bg-gold hover:text-black">
+          HUBUNGI SAYA
+        </a>
+
+        <div class="reveal-up mt-14 flex items-center justify-center gap-5 text-[9px] tracking-[0.3em] text-white/30">
+          <a href="#" class="transition-colors duration-300 hover:text-gold">INSTAGRAM</a>
+          <span class="h-1 w-1 rounded-full bg-white/20"></span>
+          <a href="#" class="transition-colors duration-300 hover:text-gold">BEHANCE</a>
+          <span class="h-1 w-1 rounded-full bg-white/20"></span>
+          <a href="#" class="transition-colors duration-300 hover:text-gold">LINKEDIN</a>
+        </div>
+
+        <p class="mt-12 text-[9px] tracking-[0.3em] text-white/20">
+          © 2025 — DIBUAT DENGAN CAHAYA &amp; KENANGAN
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIBRARIES & SCRIPT EXTERNAL -->
+  <script src="https://cloudflare.com"></script>
+  <script src="https://cloudflare.com"></script>
+  <script src="https://unpkg.com"></script>
+  <script src="main.js"></script>
+</body>
+</html>
